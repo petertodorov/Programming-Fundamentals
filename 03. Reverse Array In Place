@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+class ReverseArrayInPlace
+{
+    static void Main(string[] arg)
+    {
+        int[] numbers =  Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+      
+        for (int i = 0; i < numbers.Length/2; i++)
+        {
+            int temp = numbers[i];
+            numbers[i] = numbers[numbers.Length -1 - i];
+            numbers[numbers.Length -1 - i] = temp;
+        }
+    
+        foreach (var item in numbers)
+        {
+            Console.Write($"{item} ");
+        }
+    }
+}
+
