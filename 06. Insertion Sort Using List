@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+class InsertionSortUsingList
+{
+    static void Main(string[] args)
+    {
+        int[] input = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+        List <int> sorted = new List<int>();
+        for (int i = 0; i < input.Length - 1; i++)
+        {
+            int next = i + 1;
+            while (next > 0)
+            {
+                if (input[next] < input[next - 1])
+                {
+                    int temp = input[next];
+                    input[next] = input[next - 1];
+                    input[next - 1] = temp;
+                    
+                }
+                sorted.Add(input[next - 1]);
+
+                next--;
+            }
+        }
+        foreach (var item in input)
+        {
+            Console.Write($"{item} ");
+        }
+    }
+}
