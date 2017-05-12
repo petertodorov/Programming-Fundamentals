@@ -1,0 +1,15 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+class LargestNElements
+{
+    static void Main(string[] args)
+    {
+        int[] input = Console.ReadLine().Split(' ').Select(int.Parse).ToArray();
+        int n = int.Parse(Console.ReadLine());
+        input = input.OrderBy(x => -x).Take(n).ToArray();
+        Console.WriteLine(String.Join(" ", input));
+    }
+}
